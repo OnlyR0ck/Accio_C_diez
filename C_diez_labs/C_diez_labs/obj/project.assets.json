@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Git Projects\\Accio_C_diez\\C_diez_labs\\C_diez_labs\\C_diez_labs.csproj",
+      "projectUniqueName": "D:\\Git Projects\\C_diez_labs\\C_diez_labs\\C_diez_labs.csproj",
       "projectName": "C_diez_labs",
-      "projectPath": "D:\\Git Projects\\Accio_C_diez\\C_diez_labs\\C_diez_labs\\C_diez_labs.csproj",
+      "projectPath": "D:\\Git Projects\\C_diez_labs\\C_diez_labs\\C_diez_labs.csproj",
       "packagesPath": "C:\\Users\\guita\\.nuget\\packages\\",
-      "outputPath": "D:\\Git Projects\\Accio_C_diez\\C_diez_labs\\C_diez_labs\\obj\\",
+      "outputPath": "D:\\Git Projects\\C_diez_labs\\C_diez_labs\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -65,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
