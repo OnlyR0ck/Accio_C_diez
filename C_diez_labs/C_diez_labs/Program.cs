@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Drawing.Drawing2D;
+using System.Drawing;
+using System.Windows;
 
 namespace C_diez_labs
 {
@@ -47,6 +50,7 @@ namespace C_diez_labs
             Console.WriteLine(String.Concat("The factorial of ", num, " is : ", result));
         }
 
+        //
         static void Fibonnaci()
         {
 
@@ -54,7 +58,30 @@ namespace C_diez_labs
 
         static void CreateShape()
         {
+            int kode = 1;
 
+            Console.WriteLine("Draw a circle/ellipse. Enter: 1 \nDraw polygon. Enter: 2 ");
+            kode = Convert.ToInt16(Console.ReadLine());
+            if (kode == 1)
+            {
+                Console.WriteLine("Эллипс: 1\nКруг: 2\n");
+                kode = Convert.ToInt16(Console.ReadLine());
+                if (kode == 1)
+                {
+                    Console.WriteLine("Представте что здесь нарисован элллипс\n");
+                }
+                else
+                {
+                    Console.WriteLine("Представте что здесь нарисован круг\n");
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("Введите количесвто сторон многоугольника\n");
+                int n = Convert.ToInt16(Console.ReadLine());
+                Console.WriteLine($"Представте что здесь нарисован многоугольие с {n} сторонами\n");
+            }
         }
 
         static void QuessTheNumber()
@@ -83,7 +110,8 @@ namespace C_diez_labs
                 }
 
                 if (!flag) break;
-                Console.WriteLine(String.Concat("\nTell me, Is your num bigger or less than ", middlle, " Type B or L."));
+                Console.WriteLine(
+                    String.Concat("\nTell me, Is your num bigger or less than ", middlle, " Type B or L."));
                 switch (Console.ReadLine().ToLower())
                 {
                     case "b":
@@ -100,3 +128,6 @@ namespace C_diez_labs
         }
     }
 }
+    
+
+    
