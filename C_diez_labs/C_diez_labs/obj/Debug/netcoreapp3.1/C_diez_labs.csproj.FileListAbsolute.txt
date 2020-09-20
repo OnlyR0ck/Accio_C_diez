@@ -25,3 +25,4 @@ D:\C#\Accio_C_diez\C_diez_labs\C_diez_labs\obj\Debug\netcoreapp3.1\C_diez_labs.d
 D:\C#\Accio_C_diez\C_diez_labs\C_diez_labs\obj\Debug\netcoreapp3.1\C_diez_labs.pdb
 D:\C#\Accio_C_diez\C_diez_labs\C_diez_labs\obj\Debug\netcoreapp3.1\C_diez_labs.genruntimeconfig.cache
 D:\C#\Accio_C_diez\C_diez_labs\C_diez_labs\obj\Debug\netcoreapp3.1\C_diez_labs.csproj.ResolveComReference.cache
+D:\Git Projects\C_diez_labs\C_diez_labs\obj\Debug\netcoreapp3.1\C_diez_labs.csproj.ResolveComReference.cache
