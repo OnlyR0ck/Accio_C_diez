@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Drawing.Drawing2D;
-using System.Drawing;
-using System.Windows;
 
 namespace C_diez_labs
 {
@@ -10,10 +7,11 @@ namespace C_diez_labs
         static void Main(string[] args)
         {
             int code = 1;
-            Console.WriteLine("1 - Factorial\n2 - Fibonnaci\n3 - Create shape\n4 - Quess the number game\n0 - exit");
             while (Convert.ToBoolean(code))
             {
-                code = Convert.ToInt16(Console.ReadLine());
+                Console.WriteLine("1 - Factorial\n2 - Fibonnaci\n3 - Create shape\n4 - Quess the number game\n0 - exit");
+                Console.Write("Your choice : ");
+                int.TryParse(Console.ReadLine(), out code);
                 switch (code)
                 {
                     case 1:
@@ -33,13 +31,16 @@ namespace C_diez_labs
                         break;
 
                 }
+                Console.Clear();
             }
         }
 
         static void Factorial()
         {
-            Console.WriteLine("Enter a number : ");
-            int num = Console.Read();
+            Console.Write("Enter a number : ");
+            int num , temp;
+            int.TryParse(Console.ReadLine(), out num);
+            temp = num;
             int result = 1;
             while (Convert.ToBoolean(num))
             {
@@ -47,13 +48,27 @@ namespace C_diez_labs
                 num--;
             }
 
-            Console.WriteLine(String.Concat("The factorial of ", num, " is : ", result));
+            Console.WriteLine(String.Concat("The factorial of ", temp, " is : ", result));
+
+            Console.Read();
         }
 
         //
         static void Fibonnaci()
         {
+            int now = 1, temp = 0, fake = 0, n;
+            Console.Write("How many numbers to deduce from the fibbonacci sequence : ");
+            int.TryParse(Console.ReadLine(), out n);
+            Console.Write("Fibbonaci sequence : ");
+            for (int i = 0; i < n; i++)
+            {
+                fake = now;
+                now += temp;
+                Console.Write(String.Concat(" ", now));
+                temp = fake;
+            }
 
+            Console.ReadLine();
         }
 
         static void CreateShape()
@@ -80,8 +95,10 @@ namespace C_diez_labs
             {
                 Console.WriteLine("Введите количесвто сторон многоугольника\n");
                 int n = Convert.ToInt16(Console.ReadLine());
-                Console.WriteLine($"Представте что здесь нарисован многоугольие с {n} сторонами\n");
+                Console.WriteLine($"Представте что здесь нарисован многоугольик с {n} сторонами\n");
             }
+
+            Console.ReadLine();
         }
 
         static void QuessTheNumber()
