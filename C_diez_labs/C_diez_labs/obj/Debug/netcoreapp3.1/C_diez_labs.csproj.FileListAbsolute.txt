@@ -11,3 +11,17 @@ D:\Git Projects\C_diez_labs\C_diez_labs\obj\Debug\netcoreapp3.1\C_diez_labs.cspr
 D:\Git Projects\C_diez_labs\C_diez_labs\obj\Debug\netcoreapp3.1\C_diez_labs.dll
 D:\Git Projects\C_diez_labs\C_diez_labs\obj\Debug\netcoreapp3.1\C_diez_labs.pdb
 D:\Git Projects\C_diez_labs\C_diez_labs\obj\Debug\netcoreapp3.1\C_diez_labs.genruntimeconfig.cache
+D:\C#\Accio_C_diez\C_diez_labs\C_diez_labs\bin\Debug\netcoreapp3.1\C_diez_labs.exe
+D:\C#\Accio_C_diez\C_diez_labs\C_diez_labs\bin\Debug\netcoreapp3.1\C_diez_labs.deps.json
+D:\C#\Accio_C_diez\C_diez_labs\C_diez_labs\bin\Debug\netcoreapp3.1\C_diez_labs.runtimeconfig.json
+D:\C#\Accio_C_diez\C_diez_labs\C_diez_labs\bin\Debug\netcoreapp3.1\C_diez_labs.runtimeconfig.dev.json
+D:\C#\Accio_C_diez\C_diez_labs\C_diez_labs\bin\Debug\netcoreapp3.1\C_diez_labs.dll
+D:\C#\Accio_C_diez\C_diez_labs\C_diez_labs\bin\Debug\netcoreapp3.1\C_diez_labs.pdb
+D:\C#\Accio_C_diez\C_diez_labs\C_diez_labs\obj\Debug\netcoreapp3.1\C_diez_labs.csprojAssemblyReference.cache
+D:\C#\Accio_C_diez\C_diez_labs\C_diez_labs\obj\Debug\netcoreapp3.1\C_diez_labs.AssemblyInfoInputs.cache
+D:\C#\Accio_C_diez\C_diez_labs\C_diez_labs\obj\Debug\netcoreapp3.1\C_diez_labs.AssemblyInfo.cs
+D:\C#\Accio_C_diez\C_diez_labs\C_diez_labs\obj\Debug\netcoreapp3.1\C_diez_labs.csproj.CoreCompileInputs.cache
+D:\C#\Accio_C_diez\C_diez_labs\C_diez_labs\obj\Debug\netcoreapp3.1\C_diez_labs.dll
+D:\C#\Accio_C_diez\C_diez_labs\C_diez_labs\obj\Debug\netcoreapp3.1\C_diez_labs.pdb
+D:\C#\Accio_C_diez\C_diez_labs\C_diez_labs\obj\Debug\netcoreapp3.1\C_diez_labs.genruntimeconfig.cache
+D:\C#\Accio_C_diez\C_diez_labs\C_diez_labs\obj\Debug\netcoreapp3.1\C_diez_labs.csproj.ResolveComReference.cache
