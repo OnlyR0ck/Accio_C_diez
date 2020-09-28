@@ -1,0 +1,10 @@
+C:\Users\kiril\source\repos\Jokke\Jokke\obj\Debug\Jokke.csprojAssemblyReference.cache
+C:\Users\kiril\source\repos\Jokke\Jokke\obj\Debug\Jokke.Properties.Resources.resources
+C:\Users\kiril\source\repos\Jokke\Jokke\obj\Debug\Jokke.csproj.GenerateResource.cache
+C:\Users\kiril\source\repos\Jokke\Jokke\obj\Debug\Jokke.csproj.CoreCompileInputs.cache
+C:\Users\kiril\source\repos\Jokke\Jokke\bin\Debug\Jokke.exe.config
+C:\Users\kiril\source\repos\Jokke\Jokke\bin\Debug\Jokke.exe
+C:\Users\kiril\source\repos\Jokke\Jokke\bin\Debug\Jokke.pdb
+C:\Users\kiril\source\repos\Jokke\Jokke\obj\Debug\Jokke.exe
+C:\Users\kiril\source\repos\Jokke\Jokke\obj\Debug\Jokke.pdb
+C:\Users\kiril\source\repos\Jokke\Jokke\obj\Debug\Jokke.Form1.resources
