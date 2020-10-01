@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C_diez_labs", "C_diez_labs\2,1\C_diez_labs\C_diez_labs.csproj", "{1809B1CA-40C6-469C-A94B-1B096777499C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Third", "C_diez_labs\2,1\Third\Third.csproj", "{FEC5F878-21C2-4149-9CC1-1E5556B2B7FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1809B1CA-40C6-469C-A94B-1B096777499C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1809B1CA-40C6-469C-A94B-1B096777499C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1809B1CA-40C6-469C-A94B-1B096777499C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1809B1CA-40C6-469C-A94B-1B096777499C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEC5F878-21C2-4149-9CC1-1E5556B2B7FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEC5F878-21C2-4149-9CC1-1E5556B2B7FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEC5F878-21C2-4149-9CC1-1E5556B2B7FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEC5F878-21C2-4149-9CC1-1E5556B2B7FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4DCF9CD-F2D7-49F7-8028-F4FA0322F4F3}
+	EndGlobalSection
+EndGlobal
