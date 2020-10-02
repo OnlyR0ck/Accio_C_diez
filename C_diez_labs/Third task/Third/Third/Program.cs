@@ -48,7 +48,7 @@ namespace Third
 
         static void second()
         {
-
+            Safe<int> safe(25) =  new Safe<int>();
         }
 
         static void third()
@@ -130,4 +130,14 @@ namespace Third
         }
     }
 
+    class Safe<T>
+    {
+        private T N;
+
+        Safe(T b)
+        {
+            N = b;
+        }
+
+    }
 }
