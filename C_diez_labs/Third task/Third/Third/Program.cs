@@ -4,6 +4,7 @@ namespace Third
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             menu();
@@ -78,6 +79,12 @@ namespace Third
             }
 
         }
+        public static void Func()
+        {
+            A someobjects = new A();
+            A anyobjects = new A();
+            A anybjects = new A();
+        }
     }
 
     class Duck
@@ -130,12 +137,7 @@ namespace Third
             Console.WriteLine("ЪЕЕЕЪ");
         }
     }
-    public static void Func()
-    {
-        A someobjects = new A();
-        A anyobjects = new A();
-        A anybjects = new A();
-    }
+   
     class A
     {
         public static int count;
