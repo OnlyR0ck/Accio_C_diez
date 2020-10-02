@@ -43,7 +43,8 @@ namespace Third
         }
         static void first()
         {
-
+            Func();
+            Console.WriteLine($"Create objects: {A.count}");
         }
 
         static void second()
@@ -127,6 +128,20 @@ namespace Third
         public override void GetRoar()
         {
             Console.WriteLine("ЪЕЕЕЪ");
+        }
+    }
+    public static void Func()
+    {
+        A someobjects = new A();
+        A anyobjects = new A();
+        A anybjects = new A();
+    }
+    class A
+    {
+        public static int count;
+        public A()
+        {
+            count++;
         }
     }
 
