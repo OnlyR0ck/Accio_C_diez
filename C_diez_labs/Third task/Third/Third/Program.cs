@@ -5,12 +5,15 @@ namespace Third
     class Program
     {
 
+     
+
         static void Main(string[] args)
+ master
         {
-            menu();
+            Menu();
         }
 
-        static void menu()
+        static void Menu()
         {
             int code;
 
@@ -22,13 +25,13 @@ namespace Third
                 switch (code)
                 {
                     case 1:
-                        first();
+                        First();
                         break;
                     case 2:
-                        second();
+                        Second();
                         break;
                     case 3:
-                        third();
+                        Third();
                         break;
                     case 0:
                         Environment.Exit(0);
@@ -41,19 +44,23 @@ namespace Third
                 Console.Clear();
 
             }
+            
         }
-        static void first()
+        static void First()
         {
             Func();
             Console.WriteLine($"Create objects: {A.count}");
         }
 
-        static void second()
+        static void Second()
         {
-
+            Safe<bool, double, string> safe = new Safe<bool, double, string>( true, 25, "Lox");
+            
+                
+            safe.Veiw();
         }
 
-        static void third()
+        static void Third()
         {
             Console.Clear();
             Duck[] ducks = new Duck[5];
@@ -89,14 +96,13 @@ namespace Third
 
     class Duck
     {
-        public string roar { get; set; }
+        public string Roar { get; set; }
 
         public virtual void GetRoar()
         {
             Console.WriteLine("Auf");
         }
     }
-
     class RubberDuck : Duck
     {
         public override void GetRoar()
@@ -104,7 +110,6 @@ namespace Third
             Console.WriteLine("Серёжа...");
         }
     }
-
     class GrayDuck : Duck
     {
         public override void GetRoar()
@@ -112,7 +117,6 @@ namespace Third
             Console.WriteLine("Сбрил брови сыну...");
         }
     }
-
     class BlueDuck : Duck
     {
         public override void GetRoar()
@@ -120,7 +124,6 @@ namespace Third
             Console.WriteLine("Зачем?");
         }
     }
-
     class FatDuck : Duck
     {
         public override void GetRoar()
@@ -128,8 +131,6 @@ namespace Third
             Console.WriteLine("Не объяснив причину.");
         }
     }
-
-
     class KazanovaDuck : Duck
     {
         public override void GetRoar()
@@ -145,6 +146,26 @@ namespace Third
         {
             count++;
         }
+    }
+
+    class Safe<TB,TD,TS>
+    {
+        private TB Worker;
+        private TD Age;
+        private TS Fio;
+
+        public Safe(TB wrk, TD ag, TS fi)
+        {
+            Worker = wrk;
+            Age = ag;
+            Fio = fi;
+        }
+
+       public void Veiw()
+        {
+            Console.WriteLine($"Can work"+ Worker + "\nFIO" + Fio +"\nAge" + Age);
+        }
+
     }
 
 }
