@@ -4,7 +4,11 @@ namespace Third
 {
     class Program
     {
-        static void Main()
+
+     
+
+        static void Main(string[] args)
+ master
         {
             Menu();
         }
@@ -44,7 +48,8 @@ namespace Third
         }
         static void First()
         {
-
+            Func();
+            Console.WriteLine($"Create objects: {A.count}");
         }
 
         static void Second()
@@ -80,6 +85,12 @@ namespace Third
                 ducks[new Random().Next(5)].GetRoar();
             }
 
+        }
+        public static void Func()
+        {
+            A someobjects = new A();
+            A anyobjects = new A();
+            A anybjects = new A();
         }
     }
 
@@ -125,6 +136,15 @@ namespace Third
         public override void GetRoar()
         {
             Console.WriteLine("ЪЕЕЕЪ");
+        }
+    }
+   
+    class A
+    {
+        public static int count;
+        public A()
+        {
+            count++;
         }
     }
 
