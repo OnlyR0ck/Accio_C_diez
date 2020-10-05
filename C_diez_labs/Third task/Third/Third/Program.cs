@@ -8,7 +8,7 @@ namespace Third
      
 
         static void Main(string[] args)
- master
+
         {
             Menu();
         }
