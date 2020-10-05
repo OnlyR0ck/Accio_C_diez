@@ -54,7 +54,7 @@ namespace Third
 
         static void Second()
         {
-            Safe<bool, double, string> safe = new Safe<bool, double, string>( true, 25, "Lox");
+            Safe<object, object, object> safe = new Safe<object, object, object>( true, 25, "Lox");
             
                 
             safe.Veiw();
@@ -150,20 +150,20 @@ namespace Third
 
     class Safe<TB,TD,TS>
     {
-        private TB Worker;
-        private TD Age;
-        private TS Fio;
+        private readonly TB _worker;
+        private readonly TD _age;
+        private readonly TS _fio;
 
         public Safe(TB wrk, TD ag, TS fi)
         {
-            Worker = wrk;
-            Age = ag;
-            Fio = fi;
+            _worker = wrk;
+            _age = ag;
+            _fio = fi;
         }
 
        public void Veiw()
         {
-            Console.WriteLine($"Can work"+ Worker + "\nFIO" + Fio +"\nAge" + Age);
+            Console.WriteLine($"Can work"+ _worker + "\nFIO" + _fio +"\nAge" + _age);
         }
 
     }
