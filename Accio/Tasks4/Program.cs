@@ -4,40 +4,8 @@ namespace Tasks4
 {
     internal class Program
     {
-       
         private static void Main(string[] args)
         {
-
-          
-        }
-
-        private static void SecondTask()
-        {
-            while (true)
-            {
-                Console.WriteLine("Enter 2 characters from which we will draw the flag");
-                var sumbol = Console.ReadLine();
-                if (sumbol != "  " && sumbol.Length != 2) Console.WriteLine("Please try again\n");
-                else
-                {
-                    char[,] flag = new char[6, 15];
-                    for (int i = 0; i < flag.GetLength(0); i++)
-                    {
-                        for (int j = 0; j < flag.GetLength(1); j++)
-                        {
-                            if (i != 2 && i != 3) flag[i, j] = Convert.ToChar(sumbol.Substring(0, 1));
-                            else flag[i, j] = Convert.ToChar(sumbol.Substring(1));
-                        }
-                    }
-                    for (int i = 0; i < flag.GetLength(0); i++)
-                    {
-                        for (int j = 0; j < flag.GetLength(1); j++) Console.Write(flag[i, j]);
-                        Console.Write("\n");
-                    }
-                    break;
-                }
-            }
-
             var code = 1;
             while (Convert.ToBoolean(code))
             {
@@ -51,12 +19,8 @@ namespace Tasks4
                         Console.ReadKey(true);
                         break;
                     case 2:
-<<<<<<< HEAD
                         SecondTask();
                         Console.ReadKey(true);
-=======
-                      SecondTask();
->>>>>>> 5693700a5f8dbf3cd33340050375ff089f3c63f9
                         break;
                     case 3:
                         Console.ReadKey(true);
@@ -64,8 +28,8 @@ namespace Tasks4
                     case 0:
                         Environment.Exit(0);
                         break;
-                } 
-               
+                }
+
                 Console.Clear();
             }
 
@@ -93,32 +57,31 @@ namespace Tasks4
                 ShapeNum = new Random().Next(3);
                 return shapes[ShapeNum];
             }
-        }
-
-        static void SecondTask()
-        {
-            while (true)
+            void SecondTask()
             {
-                Console.WriteLine("Enter 2 characters from which we will draw the flag");
-                var sumbol = Console.ReadLine();
-                if (sumbol != "  " && sumbol.Length != 2) Console.WriteLine("Please try again\n");
-                else
+                while (true)
                 {
-                    char[,] flag = new char[6, 15];
-                    for (int i = 0; i < flag.GetLength(0); i++)
+                    Console.WriteLine("Enter 2 characters from which we will draw the flag");
+                    var sumbol = Console.ReadLine();
+                    if (sumbol != "  " && sumbol.Length != 2) Console.WriteLine("Please try again\n");
+                    else
                     {
-                        for (int j = 0; j < flag.GetLength(1); j++)
+                        char[,] flag = new char[6, 15];
+                        for (int i = 0; i < flag.GetLength(0); i++)
                         {
-                            if (i != 2 && i != 3) flag[i, j] = Convert.ToChar(sumbol.Substring(0, 1));
-                            else flag[i, j] = Convert.ToChar(sumbol.Substring(1));
+                            for (int j = 0; j < flag.GetLength(1); j++)
+                            {
+                                if (i != 2 && i != 3) flag[i, j] = Convert.ToChar(sumbol.Substring(0, 1));
+                                else flag[i, j] = Convert.ToChar(sumbol.Substring(1));
+                            }
                         }
+                        for (int i = 0; i < flag.GetLength(0); i++)
+                        {
+                            for (int j = 0; j < flag.GetLength(1); j++) Console.Write(flag[i, j]);
+                            Console.Write("\n");
+                        }
+                        break;
                     }
-                    for (int i = 0; i < flag.GetLength(0); i++)
-                    {
-                        for (int j = 0; j < flag.GetLength(1); j++) Console.Write(flag[i, j]);
-                        Console.Write("\n");
-                    }
-                    break;
                 }
             }
         }
@@ -133,7 +96,6 @@ namespace Tasks4
     {
         public override void Draw()
         {
-<<<<<<< HEAD
             for (var i = 0; i < 10; i++)
             {
                 for (var j = 0; j < i; j++) Console.Write('0');
@@ -175,12 +137,6 @@ namespace Tasks4
 
                 Console.WriteLine();
             }
-=======
-            throw new NotImplementedException();
-
->>>>>>> 5693700a5f8dbf3cd33340050375ff089f3c63f9
         }
-       
     }
-   
 }
