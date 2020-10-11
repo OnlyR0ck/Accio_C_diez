@@ -36,9 +36,9 @@ namespace Tasks4
             static void Drawing()
             {
                 Console.Clear();
-                Shape[] shapes = new Shape[4];
+                var shapes = new Shape[4];
                 var ShapeNum = 0;
-                
+
                 shapes[0] = new Triangle();
                 shapes[1] = new Cube();
                 shapes[2] = new Sphere();
@@ -46,7 +46,7 @@ namespace Tasks4
                 ShapeNum++;
 
                 Console.WriteLine("\nWhat is this figure?\n1 - Triangle.\n2 - Cube.\n3 - Sphere.");
-                int code = 0;
+                var code = 0;
                 Console.Write("\nYour choice: ");
                 int.TryParse(Console.ReadLine(), out code);
                 Console.WriteLine(ShapeNum == code ? "You Win!" : "You lose!");
@@ -57,29 +57,30 @@ namespace Tasks4
                 ShapeNum = new Random().Next(3);
                 return shapes[ShapeNum];
             }
+
             void SecondTask()
             {
                 while (true)
                 {
                     Console.WriteLine("Enter 2 characters from which we will draw the flag");
                     var sumbol = Console.ReadLine();
-                    if (sumbol != "  " && sumbol.Length != 2) Console.WriteLine("Please try again\n");
+                    if (sumbol != "  " && sumbol.Length != 2)
+                    {
+                        Console.WriteLine("Please try again\n");
+                    }
                     else
                     {
-                        char[,] flag = new char[6, 15];
-                        for (int i = 0; i < flag.GetLength(0); i++)
+                        var flag = new char[6, 15];
+                        for (var i = 0; i < flag.GetLength(0); i++)
+                        for (var j = 0; j < flag.GetLength(1); j++)
+                            if (i != 2 && i != 3) flag[i, j] = Convert.ToChar(sumbol.Substring(0, 1));
+                            else flag[i, j] = Convert.ToChar(sumbol.Substring(1));
+                        for (var i = 0; i < flag.GetLength(0); i++)
                         {
-                            for (int j = 0; j < flag.GetLength(1); j++)
-                            {
-                                if (i != 2 && i != 3) flag[i, j] = Convert.ToChar(sumbol.Substring(0, 1));
-                                else flag[i, j] = Convert.ToChar(sumbol.Substring(1));
-                            }
-                        }
-                        for (int i = 0; i < flag.GetLength(0); i++)
-                        {
-                            for (int j = 0; j < flag.GetLength(1); j++) Console.Write(flag[i, j]);
+                            for (var j = 0; j < flag.GetLength(1); j++) Console.Write(flag[i, j]);
                             Console.Write("\n");
                         }
+
                         break;
                     }
                 }
