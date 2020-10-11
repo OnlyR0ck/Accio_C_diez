@@ -23,6 +23,14 @@ namespace Tasks4
                         Console.ReadKey(true);
                         break;
                     case 3:
+                        Console.WriteLine("I have no enemies.So I just overridden the methods");
+                        MyEnemies a = new MyEnemies {Name = "Lox"};
+                        MyEnemies b = new MyEnemies() {Name = "NeLox"};
+                        Console.WriteLine(a.ToString());
+                        Console.WriteLine(a.GetHashCode());
+                        var c = a.Equals(b);
+                        Console.WriteLine(c);
+
                         Console.ReadKey(true);
                         break;
                     case 0:
@@ -57,6 +65,7 @@ namespace Tasks4
                 ShapeNum = new Random().Next(3);
                 return shapes[ShapeNum];
             }
+
             void SecondTask()
             {
                 while (true)
@@ -85,8 +94,30 @@ namespace Tasks4
                 }
             }
         }
+
+       
     }
 
+
+    class MyEnemies : Object
+    { 
+        public string Name { get; set; }
+
+        public override string ToString()
+        {
+            return base.ToString()+ "\n" + Name;
+        }
+
+        public override int GetHashCode()
+        {
+            return Name.GetHashCode();
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return base.Equals(obj);
+        }
+    }
     internal abstract class Shape
     {
         public abstract void Draw();
