@@ -3,30 +3,28 @@
 namespace HelperLibrary
 {
     /// <summary>
-    /// This is a class, that helps you to create menu bar. 
+    ///     This is a class, that helps you to create menu bar.
     /// </summary>
     public class Menu
     {
+        public delegate void MenuDelegate();
+
         /// <summary>
-        /// Params - the array of MenuDelegates.
+        ///     Params - the array of MenuDelegates.
         /// </summary>
         /// <param name="delegateArr"></param>
         public static void StartMenu(MenuDelegate[] delegateArr)
         {
-            var code = 0;
             var Option = 0;
             var Size = delegateArr.Length + 1;
-            string[] options = new string[Size];
+            var options = new string[Size];
 
-            for (int i = 0; i < Size - 1; i++)
-            {
-                options[i] = $"{delegateArr[i].Method.Name}";
-            }
+            for (var i = 0; i < Size - 1; i++) options[i] = $"{delegateArr[i].Method.Name}";
 
             //There may be an error. 
             options[^1] = "Exit";
 
-            string promt = @"
+            var promt = @"
  ▄████  ▒█████  ▓█████▄   ██████     ███▄ ▄███▓▓█████  ███▄    █  █    ██ 
  ██▒ ▀█▒▒██▒  ██▒▒██▀ ██▌▒██    ▒    ▓██▒▀█▀ ██▒▓█   ▀  ██ ▀█   █  ██  ▓██▒
 ▒██░▄▄▄░▒██░  ██▒░██   █▌░ ▓██▄      ▓██    ▓██░▒███   ▓██  ▀█ ██▒▓██  ▒██░
@@ -52,12 +50,9 @@ Use arrow key to cycle through options.
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine(promt);
                 Console.ResetColor();
-                for (int i = 0; i < Size; i++)
+                for (var i = 0; i < Size; i++)
                 {
-                    if (Option == i)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                    }
+                    if (Option == i) Console.ForegroundColor = ConsoleColor.Red;
 
                     Console.WriteLine($"{i}. {options[i]}");
                     if (Option == i) Console.ResetColor();
@@ -65,24 +60,19 @@ Use arrow key to cycle through options.
 
                 var KeyPressed = Console.ReadKey(true);
                 if (KeyPressed.Key == ConsoleKey.DownArrow)
-                {
                     if (Option != Size - 1)
-                    {
                         Option++;
-                    }
-                }
 
                 if (KeyPressed.Key == ConsoleKey.UpArrow)
-                {
                     if (Option != 0)
-                    {
                         Option--;
-                    }
-                }
 
                 if (KeyPressed.Key == ConsoleKey.Enter)
                 {
-                    if (Option == Size - 1) Environment.Exit(0);
+                    if (Option == Size - 1)
+                    {
+                        Environment.Exit(0);
+                    }
                     else if (Option >= 0 && Option < Size)
                     {
                         Console.Clear();
@@ -92,7 +82,5 @@ Use arrow key to cycle through options.
                 }
             }
         }
-
-        public delegate void MenuDelegate();
     }
 }
