@@ -14,11 +14,11 @@ namespace Task5
 
             //Explicitly initialize your function in an array.
 
-            delegates[0] = Libraray;
+            delegates[0] = Library;
             HelperLibrary.Menu.StartMenu(delegates);
         }
 
-        static void Libraray()
+        static void Library()
         {
             Console.WriteLine("Hi, Do you like the menu?");
         }

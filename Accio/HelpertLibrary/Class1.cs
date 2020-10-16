@@ -20,7 +20,7 @@ namespace HelperLibrary
 
             for (int i = 0; i < Size - 1; i++)
             {
-                options[i] = $"Task {++code}";
+                options[i] = $"{delegateArr[i].Method.Name}";
             }
 
             //There may be an error. 
