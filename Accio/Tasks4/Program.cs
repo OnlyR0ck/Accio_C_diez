@@ -30,7 +30,6 @@ namespace Tasks4
                         Console.WriteLine(a.GetHashCode());
                         var c = a.Equals(b);
                         Console.WriteLine(c);
-
                         Console.ReadKey(true);
                         break;
                     case 0:

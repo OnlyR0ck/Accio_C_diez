@@ -5,18 +5,18 @@ namespace Task5
 {
     internal class Program
     {
-       
+
 
         public static void Main(string[] args)
         {
             //Change array size if you want to add a function.
 
-            var delegates = new Menu.MenuDelegate[2];
+            var delegates = new Menu.MenuDelegate[3];
 
             //Explicitly initialize your function in an array.
 
             delegates[0] = Library;
-            delegates[1]= Using;
+            delegates[1] = Using;
             delegates[2] = Proverochka;
             Menu.StartMenu(delegates);
         }
@@ -43,67 +43,188 @@ namespace Task5
         static void Drawing()
         {
             Console.Clear();
-          
-
-            Console.WriteLine("\n1 - Triangle.\n2 - Cube.\n3 - Sphere.");
-            var kode = Console.ReadLine();
-
-            switch(Convert.ToInt32(kode))
+            var buf = "";
+            var kode = 0;
+            while (true)
+            {
+                Console.WriteLine("1 - Triangle.\n2 - Rectangle.\n3 - Sphere.");
+                try
+                {
+                    buf = Console.ReadLine();
+                    kode = Convert.ToInt32(buf);
+                    break;
+                }
+                //
+               
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"{ex.Message}\nMaybe you didn't enter anything, or you entered a letter. Please enter numbers from 1-3");
+                }
+            }
+            string buff = "";
+            uint lenght = 0;
+            uint width = 0;
+            Opshibka prov = new Opshibka();
+            switch (kode)
             {
                 case 1:
                     Triangle tr = new Triangle();
+                    while (true)
+                    {
+                        Console.WriteLine("Enter the length of the first Cathetus");
+                        buff = Console.ReadLine();
+                        try
+                        {
+                            lenght = Convert.ToUInt32(buff);
+                            if (prov.Input(lenght))
+                            {
+                                tr.Draw(lenght);
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("We cannot draw a square for such values ​​enter length and width > 2 The number is too large");
+                            }                    
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"You didn't enter a number or your number <0 or number is not an integer \n{ex.Message}");
+                        }
+                    }
                     break;
                 case 2:
-                    Cube cb = new Cube();
+                    Cube cb = new Cube();                 
+                    while (true)
+                    {
+                        Console.WriteLine("Enter Length");
+                        buff = Console.ReadLine();
+                        try
+                        {
+                            lenght = Convert.ToUInt32(buff);
+                            Console.WriteLine("Enter Width");
+                            buff = Console.ReadLine();
+                            try
+                            {
+                                width = Convert.ToUInt32(buff);
+                                                          
+                                if (prov.Input(width, lenght))
+                                {
+                                    cb.Draw(width, lenght);
+                                    break;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("We cannot draw a square for such values ​​enter length and width > 2 or The number is too large");
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine($"You didn't enter a number or your number <0 or number is not an integer \n{ex.Message}");
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"You didn't enter a number or your number <0 or number is not an integer\n{ex.Message}");
+                        }
+                        
+                    }
                     break;
                 case 3:
-                    Sphere sph = new Sphere();
+                    Sphere sph = new Sphere();                    
+                    ulong r;
+                    Console.WriteLine("Enter radius");                  
+                    
+                    buff = Console.ReadLine();
+                    try
+                    {
+
+                        r = Convert.ToUInt32(buff);
+                        if (prov.Input((uint)r))
+                        {
+                            sph.Draw(r);
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("We cannot draw a square for such values ​​enter length and width > 2 The number is too large");
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"You didn't enter a number or your number <0  \n{ex.Message}");
+                    }              
                     break;
+                default:
+                    Console.WriteLine("OOOOoooops we do not know such figures(");
+                   break;
+
             }
+            
         }
-         
-           
-       
-        internal abstract class Shape
-        {
-            public abstract void Draw();
-        }
-                            
-        internal class Triangle : Shape
-        {
-            public override void Draw()
-            {
-                for (var i = 0; i < 10; i++)
-                {
-                    for (var j = 0; j < i; j++) Console.Write('0');
-                    Console.WriteLine();
-                }
-            }
+            
         }
 
-        internal class Cube : Shape
+    
+
+    class Opshibka
+    {
+        public bool Input(uint x, uint y)
         {
-            public override void Draw()
-            {
-                for (var i = 0; i < 10; i++)
-                {
-                    for (var j = 0; j < 10; j++) Console.Write("0 ");
-                    Console.WriteLine();
-                }
-            }
+            if (x <= 2 || y <= 2 && x >= 81 && y >= 81) return false;
+            else return true;
         }
 
-        internal class Sphere : Shape
+        public bool Input(uint x)
         {
-            public override void Draw()
-            {
-                var r = 7.0;
-                var r_in = r - 0.4;
-                var r_out = r + 0.4;
+            if (x <= 2 && x >= 40) return false;
+            else return true;
+        }
 
-                for (var y = r; y >= -r; --y)
+    }
+
+
+
+    class Triangle
+    {
+        public void Draw(uint first )
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            for (var i = 0; i < first; i++)
+            {
+                for (var j = 0; j < i; j++) Console.Write('0');
+                Console.WriteLine();
+            }
+        }
+    }
+
+    class Cube
+    {
+        public void Draw(uint width, uint lenght)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            for (var i = 0; i < lenght; i++)
+            {
+                for (var j = 0; j < width; j++) Console.Write("0 ");
+                Console.WriteLine();
+            }
+        }
+    }
+
+   class Sphere
+        {
+
+            public void Draw(ulong r)
+            {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            var r_in = r - 0.4;
+            var r_out = r + 0.4;
+            var minR = (int)r;
+
+                for (var y = (int)r; y >= -minR; --y)
                 {
-                    for (var x = -r; x < r_out; x += 0.5)
+                    for (var x = (double)-minR; x < r_out; x += 0.5)
                     {
                         var value = x * x + y * y;
                         if (value >= r_in * r_in && value <= r_out * r_out)
@@ -116,5 +237,7 @@ namespace Task5
                 }
             }
         }
-    }
 }
+
+
+
