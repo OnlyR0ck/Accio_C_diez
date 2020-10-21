@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using HelperLibrary;
 
 namespace Task5
@@ -31,13 +32,33 @@ namespace Task5
         }
         private static void Using()
         {
-            int areapp;
-            using (Building house = new Building { Floors = 2, Area = 2500, Occupents = 4 })
-            {
-                areapp = house.AreaPerson();
-                Console.WriteLine($"The house has:\n {house.Floors} floors\n {house.Occupents} occupants {house.Area} square feet of total area and {areapp} for one person");
+            string path, information;
+            StreamReader reader = null;
 
+            try
+            {
+                Console.Write("Path: ");
+                path = Console.ReadLine();
+
+                reader = new StreamReader(path);
+
+                information = reader.ReadToEnd();
+
+                Console.WriteLine($"Information: \n {information}");
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Oopsie! You have an exception: {ex.Message}. We don't know what to do(((");
+            }
+            finally
+            {
+                if (reader != null)
+                {
+
+                    reader.Dispose();
+                }
+            }
+
             Console.WriteLine("The End :D");
         }
         static void Drawing()
