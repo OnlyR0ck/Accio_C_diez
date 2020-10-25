@@ -9,10 +9,9 @@ namespace Task_6
     {
         static void Main(string[] args)
         {
-            var delegates = new Menu.MenuDelegate[1];
-
             //Explicitly initialize your function in an array.
-            delegates[0] = FindUniqueWords;
+            var delegates = new Menu.MenuDelegate[]{FindUniqueWords};
+
             Menu.StartMenu(delegates);
         }
 
