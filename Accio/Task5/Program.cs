@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.CompilerServices;
 using HelperLibrary;
 
 namespace Task5
@@ -30,37 +31,72 @@ namespace Task5
         {
             Console.WriteLine("Hi, Do you like the menu?");
         }
+       
+        delegate int Operation(int x, int y);
+        delegate void GetMessage();
         private static void Using()
         {
-            string path, information;
-            StreamReader reader = null;
-
             try
             {
-                Console.Write("Path: ");
-                path = Console.ReadLine();
+                Show_Message(YourCode);
 
-                reader = new StreamReader(path);
-
-                information = reader.ReadToEnd();
-
-                Console.WriteLine($"Information: \n {information}");
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                Console.WriteLine($"Oopsie! You have an exception: {ex.Message}. We don't know what to do(((");
+                Console.WriteLine($"Oopsie! You have an exception: {ex.Message}. We don't know what to do((( ");
             }
-            finally
-            {
-                if (reader != null)
-                {
-
-                    reader.Dispose();
-                }
+            finally {
+                
+                
             }
-
-            Console.WriteLine("The End :D");
+            Console.WriteLine("The End");
         }
+        private static void Show_Message(GetMessage _del)
+        {
+            _del?.Invoke();
+        }
+        private static void YourCode()
+        {
+            Console.WriteLine("Write the code here!");
+
+            Add(3,0);
+        }
+        private static int Add(int x, int y)
+        {
+            return x / y;
+        }
+
+        //private static void Using()
+        //{
+        //    string path, information;
+        //    StreamReader reader = null;
+
+        //    try
+        //    {
+        //        Console.Write("Path: ");
+        //        path = Console.ReadLine();
+
+        //        reader = new StreamReader(path);
+
+        //        information = reader.ReadToEnd();
+
+        //        Console.WriteLine($"Information: \n {information}");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine($"Oopsie! You have an exception: {ex.Message}. We don't know what to do(((");
+        //    }
+        //    finally
+        //    {
+        //        if (reader != null)
+        //        {
+
+        //            reader.Dispose();
+        //        }
+        //    }
+
+        //    Console.WriteLine("The End :D");
+        //}
         static void Drawing()
         {
             Console.Clear();
