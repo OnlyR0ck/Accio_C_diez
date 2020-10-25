@@ -39,7 +39,7 @@ namespace HelperLibrary
  |b|y| |A|C|C|I|O|
  +-+-+ +-+-+-+-+-+
 
-Use arrow key to cycle through options.
+Use arrow keys to cycle through options.
 
 
 ";
