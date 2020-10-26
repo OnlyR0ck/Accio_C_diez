@@ -1,22 +1,58 @@
 ﻿using System;
-
-
 using System.Text.RegularExpressions;
 using HelperLibrary;
 
 namespace Task_6
 {
     class Program
-    {
-        
+    {  
         static void Main()
         {
             //Explicitly initialize your function in an array.
-            var delegates = new Menu.MenuDelegate[] {FindUniqueWords, Client};
+            var delegates = new Menu.MenuDelegate[] {FindUniqueWords, Client, Hitler};
            
             Menu.StartMenu(delegates);
         }
-        
+        static void Hitler()
+        {
+            DateTime Hitlerdeath = new DateTime(1945, 4, 29, 12, 24, 3);
+            DateTime Hitlerlive = new DateTime(1889, 4, 20, 9, 50, 20);
+            Console.WriteLine($"Hitler's date of birth: {Hitlerlive}");
+            Console.WriteLine($"Hitler's death date: {Hitlerdeath}\n");
+
+            Console.WriteLine("Enter your date\n Please use this form dd%MM^yyyy : ");
+            string date = Console.ReadLine();
+
+            Console.WriteLine(date);
+            string[] words = date.Split(new char[] { '%', '^' });
+
+            string one = words[0];
+            string two = words[1];
+            string free = words[2];
+            int dd, MM, yyyy;
+            int.TryParse(one, out dd);
+            int.TryParse(two, out MM);
+            int.TryParse(free, out yyyy);
+
+            DateTime date1 = new DateTime(yyyy, MM, dd);
+
+            var result = date1.Subtract(Hitlerlive);
+            var resultDateTime = new DateTime() + result;
+
+            Console.WriteLine($"Hitler was: {resultDateTime.Year - 1} years {resultDateTime.Month - 1} months, {resultDateTime.Day - 1} days," +
+                $"{resultDateTime.Hour} hours, {resultDateTime.Minute} minutes, {resultDateTime.Second} seconds");
+            var isDeath = date1.CompareTo(Hitlerdeath) > 0 ? true : false;
+
+            if (isDeath)
+            {
+                Console.WriteLine("Hitler is dead");
+            }
+            else
+            {
+                Console.WriteLine("Tenacious bitch");
+            }
+            Console.ReadKey();
+        }
         static void FindUniqueWords()
 
         {
