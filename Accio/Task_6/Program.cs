@@ -39,5 +39,96 @@ namespace Task_6
                 if (flag) Console.Write($"{strArr[i]}, ");
             }
         }
+<<<<<<< master
+=======
+        static int sum = 1000;
+        static void Client()
+        {
+            
+            int money;
+            int kode = 0;
+            Bank bank = new Bank();
+            bank.Client += SendSms;
+            bank.Client += MyInfo;
+            Console.WriteLine($"Cash {sum}\nCard balance {bank.Info()}");
+            while (kode != 1)
+            {
+               Console.WriteLine("Exit: 1\nAdd money: 2\nTake money: 3");
+               kode = Convert.ToInt32(Console.ReadLine());
+               switch (kode)
+               {
+                   case 2:
+                       Console.WriteLine("How much money do you want to put on the card?");
+                       money = Convert.ToInt32(Console.ReadLine());
+                       Console.WriteLine();
+                       if (money <= sum)
+                       {
+                           sum -= money;
+                           bank.Add(money);
+                       }
+
+                       break;
+                   case 3:
+                       Console.WriteLine("How much money do you want to withdraw from the card?");
+                       money = Convert.ToInt32(Console.ReadLine());
+                       Console.WriteLine();
+                       bank.Take(money);
+                       break;
+               }
+               Console.WriteLine();
+            }
+        }
+
+        static void SendSms(string message)
+        {
+            if (message != null)
+            {
+                long number = 375297777777;
+                Console.WriteLine($"SMS arrive to {number:+###-##-###-##-##}");
+                //Proshodit otravka :D
+            }
+        }
+
+        
+        static void MyInfo(string massge)
+        {
+            if(massge!= null) Console.WriteLine($"Your balance {Convert.ToInt32(massge):C}\nYour cash {sum:C}");
+        }
+
+
+    }
+
+
+    class Bank
+    {
+         public int Sum;
+         public delegate void BankOperation(string massage);
+         public event BankOperation Client;
+
+         public int Info()
+         {
+             return Sum;
+         }
+
+         public void Add(int sum)
+         {
+             Sum += sum;
+             Client?.Invoke($"{sum}");
+         }
+
+         public void Take(int _sum)
+        {
+            if (_sum <= Sum)
+            {
+                Sum -= _sum;
+                
+                Client?.Invoke($"{Sum}");
+            }
+            else
+            {
+                Console.WriteLine("You haven't money");
+            }
+        }
+>>>>>>> local
     }
 }
