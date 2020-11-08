@@ -59,7 +59,7 @@ namespace Task7
     class CountryRainbow 
     {
   
-        private string[] rain = {"rainbow", "rainbow", "rainbow", "rainbow", "rainbow" };
+        
         private readonly string _count;
         public CountryRainbow(string country)
         {
@@ -67,6 +67,7 @@ namespace Task7
         }
         public IEnumerator<string> GetEnumerator()
         {
+         string[] rain = { "rainbow", "rainbow", "rainbow", "rainbow", "rainbow" };
             if (_count != "Russia")
             {
                 Console.WriteLine("Rainbow inaf");
