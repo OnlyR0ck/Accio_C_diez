@@ -39,8 +39,7 @@ namespace Task_6
                 if (flag) Console.Write($"{strArr[i]}, ");
             }
         }
-<<<<<<< master
-=======
+
         static int sum = 1000;
         static void Client()
         {
@@ -129,6 +128,6 @@ namespace Task_6
                 Console.WriteLine("You haven't money");
             }
         }
->>>>>>> local
+
     }
 }
