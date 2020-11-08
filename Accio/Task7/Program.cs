@@ -25,17 +25,17 @@ namespace Task7
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write(s[0]);
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.Write(s[2]);
+                Console.Write(s[1]);
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.Write(s[3]);
+                Console.Write(s[2]);
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write(s[4]);
+                Console.Write(s[3]);
                 Console.ForegroundColor = ConsoleColor.Blue;
-                Console.Write(s[5]);
+                Console.Write(s[4]);
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
-                Console.Write(s[6]);
+                Console.Write(s[5]);
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                Console.WriteLine(s[7]);
+                Console.WriteLine(s[6]);
             }
         }
 
@@ -49,7 +49,7 @@ namespace Task7
     class CountryRainbow 
     {
   
-        private string[] rain = {"rainbow1", "rainbow2", "rainbow3", "rainbow4", "rainbow5" };
+        private string[] rain = {"rainbow", "rainbow", "rainbow", "rainbow", "rainbow" };
         private readonly string _count;
         public CountryRainbow(string country)
         {
