@@ -46,10 +46,9 @@ namespace Task7
         }
     }
 
-    class CountryRainbow 
-    {
+    class CountryRainbow {
   
-        private string[] rain = {"rainbow", "rainbow", "rainbow", "rainbow", "rainbow" };
+        
         private readonly string _count;
         public CountryRainbow(string country)
         {
@@ -59,10 +58,11 @@ namespace Task7
         {
             if (_count != "Russia")
             {
-                Console.WriteLine("Rainbow inaf");
+                Console.WriteLine("Rainbow dostatochno");
             }
             else
             {
+                    string[] rain = { "rainbow", "rainbow", "rainbow", "rainbow", "rainbow" };
                     yield return rain[0];
                     yield return rain[1];
                     yield return rain[2];
