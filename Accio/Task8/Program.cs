@@ -1,5 +1,5 @@
-﻿using System;
-using HelperLibrary;
+﻿using HelperLibrary;
+
 
 namespace Task8
 {
@@ -7,8 +7,16 @@ namespace Task8
     {
         static void Main(string[] args)
         {
-            var delegates = new Menu.MenuDelegate[] { };
+            var delegates = new Menu.MenuDelegate[] {RUN};
             Menu.StartMenu(delegates);
+        }
+
+        static void RUN()
+        {
+            FirstTask aFirstTask = new FirstTask();
+            aFirstTask.Running();
+
+
         }
     }
 }
