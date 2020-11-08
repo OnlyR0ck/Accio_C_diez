@@ -1,62 +1,23 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using HelperLibrary;
 
 namespace Task_6
 {
     class Program
-    {  
-        static void Main()
+    {
+        static void Main(string[] args)
         {
             //Explicitly initialize your function in an array.
-            var delegates = new Menu.MenuDelegate[] {FindUniqueWords, Client, Hitler};
-           
+            var delegates = new Menu.MenuDelegate[]{FindUniqueWords};
+
             Menu.StartMenu(delegates);
         }
-        static void Hitler()
-        {
-            DateTime Hitlerdeath = new DateTime(1945, 4, 29, 12, 24, 3);
-            DateTime Hitlerlive = new DateTime(1889, 4, 20, 9, 50, 20);
-            Console.WriteLine($"Hitler's date of birth: {Hitlerlive}");
-            Console.WriteLine($"Hitler's death date: {Hitlerdeath}\n");
 
-            Console.WriteLine("Enter your date\n Please use this form dd%MM^yyyy : ");
-            string date = Console.ReadLine();
-
-            Console.WriteLine(date);
-            string[] words = date.Split(new char[] { '%', '^' });
-
-            string one = words[0];
-            string two = words[1];
-            string free = words[2];
-            int dd, MM, yyyy;
-            int.TryParse(one, out dd);
-            int.TryParse(two, out MM);
-            int.TryParse(free, out yyyy);
-
-            DateTime date1 = new DateTime(yyyy, MM, dd);
-
-            var result = date1.Subtract(Hitlerlive);
-            var resultDateTime = new DateTime() + result;
-
-            Console.WriteLine($"Hitler was: {resultDateTime.Year - 1} years {resultDateTime.Month - 1} months, {resultDateTime.Day - 1} days," +
-                $"{resultDateTime.Hour} hours, {resultDateTime.Minute} minutes, {resultDateTime.Second} seconds");
-            var isDeath = date1.CompareTo(Hitlerdeath) > 0 ? true : false;
-
-            if (isDeath)
-            {
-                Console.WriteLine("Hitler is dead");
-            }
-            else
-            {
-                Console.WriteLine("Tenacious bitch");
-            }
-            Console.ReadKey();
-        }
         static void FindUniqueWords()
-
         {
-            // List<string> notUnique;
+            List<string> notUnique;
             Console.Write("Enter string: ");
             var yourStr = Console.ReadLine();
             var newStr = Regex.Replace(yourStr, "[-.?!)(,:]", "");
@@ -78,7 +39,8 @@ namespace Task_6
                 if (flag) Console.Write($"{strArr[i]}, ");
             }
         }
-         static int sum = 1000;
+
+        static int sum = 1000;
         static void Client()
         {
             
@@ -87,7 +49,7 @@ namespace Task_6
             Bank bank = new Bank();
             bank.Client += SendSms;
             bank.Client += MyInfo;
-            Console.WriteLine($"Cash {sum} Card balance {bank.Info()}");
+            Console.WriteLine($"Cash {sum}\nCard balance {bank.Info()}");
             while (kode != 1)
             {
                Console.WriteLine("Exit: 1\nAdd money: 2\nTake money: 3");
@@ -153,18 +115,19 @@ namespace Task_6
              Client?.Invoke($"{sum}");
          }
 
-         public void Take(int sum)
+         public void Take(int _sum)
         {
-            if (sum <= Sum)
+            if (_sum <= Sum)
             {
-                Sum -= sum;
-                Client?.Invoke($"{sum}");
+                Sum -= _sum;
+                
+                Client?.Invoke($"{Sum}");
             }
             else
             {
                 Console.WriteLine("You haven't money");
             }
         }
+
     }
 }
-
