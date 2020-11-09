@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using HelperLibrary;
@@ -9,7 +9,7 @@ namespace Task8
     {
         static void Main(string[] args)
         {
-            var delegates = new Menu.MenuDelegate[] {PlayNotes };
+            var delegates = new Menu.MenuDelegate[] {PlayNotes,RUN };
             Menu.StartMenu(delegates);
         }
 
@@ -48,6 +48,13 @@ namespace Task8
                 Console.ForegroundColor = colors[j];
                 Console.Write(bigText[i]);
             }
+
+        }
+
+        static void RUN()
+        {
+            FirstTask aFirstTask = new FirstTask();
+            aFirstTask.Running();
         }
     }
 }
