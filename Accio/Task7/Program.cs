@@ -1,11 +1,9 @@
 ﻿using System;
-
 using System.Collections.Generic;
-
 using HelperLibrary;
-
 using static Task7.MyThread;
 using static Task7.Rainbow;
+
 namespace Task7
 {
     class Program
