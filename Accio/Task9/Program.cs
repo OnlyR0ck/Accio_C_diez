@@ -17,7 +17,7 @@ namespace Task9
         static void BottlesOfBeer()
         {
             ScriptEngine engine = Python.CreateEngine();
-            engine.ExecuteFile("99bottles.py");
+            engine.ExecuteFile("D:\\Git Projects\\Accio_C_diez\\Accio\\Task9\\99bottles.py");
         }
 
         static void Game()
