@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using HelperLibrary;
+using Microsoft.Scripting.Hosting;
+using IronPython.Hosting;
 
 namespace Task9
 {
@@ -8,8 +10,14 @@ namespace Task9
     {
         static void Main(string[] args)
         {
-            var delegates = new Menu.MenuDelegate[] {Game };
+            var delegates = new Menu.MenuDelegate[] {Game, BottlesOfBeer};
             Menu.StartMenu(delegates);
+        }
+
+        static void BottlesOfBeer()
+        {
+            ScriptEngine engine = Python.CreateEngine();
+            engine.ExecuteFile("99bottles.py");
         }
 
         static void Game()

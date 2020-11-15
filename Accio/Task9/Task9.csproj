@@ -14,6 +14,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DynamicLanguageRuntime" Version="1.2.3" />
+    <PackageReference Include="Dynamitey" Version="2.0.10.189" />
+    <PackageReference Include="IronPython" Version="2.7.10" />
+    <PackageReference Include="System.Dynamic.Runtime" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\HelpertLibrary\HelperLibrary.csproj" />
   </ItemGroup>
 
