@@ -12,14 +12,11 @@ namespace Task9
         {
             Console.WriteLine($"In Game {Lia} Liars and {Hon} not a Liars");
         }
-
         public void Clear()
         {
             Lia = 0;
             Hon = 0;
         }
-
-
     }
 
     public class Liars : People
@@ -39,8 +36,6 @@ namespace Task9
                 Console.WriteLine(" man is a liar");
             }
         }
-
-     
     }
 
     public class Honest : People
@@ -49,7 +44,6 @@ namespace Task9
         {
             Hon += 1;
         }
-        
         public void PrevNext(bool liars)
         {
             if (liars)
