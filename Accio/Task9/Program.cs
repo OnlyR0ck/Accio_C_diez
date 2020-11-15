@@ -10,61 +10,10 @@ namespace Task9
     {
         static void Main(string[] args)
         {
-            var delegates = new Menu.MenuDelegate[] {Game, BottlesOfBeer, Ducks};
+            var delegates = new Menu.MenuDelegate[] {Game, BottlesOfBeer};
             Menu.StartMenu(delegates);
         }
 
-        public static void Ducks()
-        {
-            Console.Clear();
-            Duck[] ducks = new Duck[7];
-            RubberDuck rbDuck = new RubberDuck("Live");
-            GrayDuck gDuck = new GrayDuck("Live");
-            RubberDuckDead rbDuckd = new RubberDuckDead("Death");
-            BlueDuck blDuck = new BlueDuck("Live");
-            KazanovaDuck kDuck = new KazanovaDuck("Live");
-            KazanovaDuckDead kDuckD = new KazanovaDuckDead("Death");
-            BlueDuckDead blDuckD = new BlueDuckDead("Death");
-            ducks[0] = rbDuck;
-            ducks[1] = gDuck;
-            ducks[2] = rbDuckd;
-            ducks[3] = blDuck;
-            ducks[4] = kDuck;
-            ducks[5] = kDuckD;
-            ducks[6] = blDuckD;
-
-
-            bool rbDuckLive = LiveOrDead(rbDuck);
-            bool GDuckLive = LiveOrDead(gDuck);
-            bool rbDuckDead = LiveOrDead(rbDuckd);
-            bool blDuckLive = LiveOrDead(blDuck);
-            bool kDuckLive = LiveOrDead(kDuck);
-            bool kDuckDead = LiveOrDead(kDuckD);
-            bool blDuckDead = LiveOrDead(blDuckD);
-            bool[] Live = new bool[7] { rbDuckLive, GDuckLive, rbDuckDead, blDuckLive, kDuckLive, kDuckDead, blDuckDead };
-
-            Console.WriteLine("Press q if you want to exit");
-            while (true)
-            {
-                var cki = Console.ReadKey(true);
-                if (cki.KeyChar == 'q') break;
-                int i = new Random().Next(6);
-                ducks[i].GetRoar();
-                Console.Write($" She's alive? - {Live[i]}\n");
-            }
-        }
-        static bool LiveOrDead(Duck ducks)
-        {
-            Type t = typeof(Duck);
-            object[] b = t.GetCustomAttributes(false);
-            foreach (DeadOrLiveDuckAttribute deadOrLiveDuckAttribute in b)
-            {
-                if (ducks.Live == deadOrLiveDuckAttribute.Live)
-                    return true;
-                else return false;
-            }
-            return true;
-        }
         static void BottlesOfBeer()
         {
             ScriptEngine engine = Python.CreateEngine();
